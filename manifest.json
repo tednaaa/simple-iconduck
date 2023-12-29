@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "Auth Clear Cookies Extension",
+  "version": "1.0",
+  "description": "Clears cookies when AuthPromptModal appears.",
+  "permissions": ["cookies"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "js": ["content-script.js"],
+      "matches": ["https://*.iconduck.com/*"]
+    }
+  ],
+  "host_permissions": ["https://iconduck.com/", "*://*/*"]
+}
